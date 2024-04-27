@@ -69,4 +69,7 @@ type Comment {
 
 type Query {
   getCustomers(page: int = 0, firstName: string, lastName: string): Customer[]
+  getContacts(page: int = 0, customerId: string, surveyTemplateId: string, username: string): Contact[]
 }
+
+type Mutation {}
