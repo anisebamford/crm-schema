@@ -1,4 +1,4 @@
-scalar Date
+scalar DateTime
 
 type Address {
   streetAddress: string!
@@ -21,7 +21,6 @@ type Person {
 }
 
 type User {
-  password: string!
   username: string!
   person: Person!
   role: string!
@@ -46,7 +45,28 @@ type Contact {
   medium: ContactMedium
   from: ContactIndividual
   to: ContactIndividual
-  date: Date!
+  date: DateTime!
   subject: string!
   contents: string!
+  survey: SurveyTemplate
+}
+
+type SurveyTemplate {
+  id: string!
+  questions: SurveyQuestion[]!
+  author: User!
+  name: string!
+}
+
+union CommentSubject = Comment | SurveyTemplate | Customer
+
+type Comment {
+  author: User!
+  subject: CommentSubject!
+  message: string!
+  date: DateTime!
+}
+
+type Query {
+  getCustomers(page: int = 0, firstName: string, lastName: string): Customer[]
 }
