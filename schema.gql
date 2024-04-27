@@ -1,0 +1,49 @@
+scalar Date
+
+type Address {
+  streetAddress: string!
+  city: string!
+  state: string!
+  postalCode: string!
+  country: string!
+}
+
+type ContactInfo {
+  phone: string
+  email: string
+  mailingAddress: Address
+}
+
+type Person {
+  givenName: string!
+  surName: string!
+  contactInfo: ContactInfo!
+}
+
+type User {
+  password: string!
+  username: string!
+  person: Person!
+}
+
+type Customer {
+  person: Person!
+}
+
+enum ContactMedium {
+  EMAIL
+  PHONE
+  CONVERSATION
+  LETTER
+}
+
+union ContactIndividual = Customer | User
+
+type Contact {
+  medium: ContactMedium
+  from: ContactIndividual
+  to: ContactIndividual
+  date: Date!
+  subject: string!
+  contents: string!
+}
