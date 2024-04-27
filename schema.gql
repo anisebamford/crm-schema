@@ -24,9 +24,11 @@ type User {
   password: string!
   username: string!
   person: Person!
+  role: string!
 }
 
 type Customer {
+  id: string!
   person: Person!
 }
 
@@ -40,6 +42,7 @@ enum ContactMedium {
 union ContactIndividual = Customer | User
 
 type Contact {
+  id: string!
   medium: ContactMedium
   from: ContactIndividual
   to: ContactIndividual
