@@ -1,33 +1,33 @@
 scalar DateTime
 
 type Address {
-  streetAddress: string!
-  city: string!
-  state: string!
-  postalCode: string!
-  country: string!
+  streetAddress: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  country: String!
 }
 
 type ContactInfo {
-  phone: string
-  email: string
+  phone: String
+  email: String
   mailingAddress: Address
 }
 
 type Person {
-  givenName: string!
-  surName: string!
+  givenName: String!
+  surName: String!
   contactInfo: ContactInfo!
 }
 
 type User {
-  username: string!
+  username: String!
   person: Person!
-  role: string!
+  role: String!
 }
 
 type Customer {
-  id: string!
+  id: String!
   person: Person!
 }
 
@@ -41,21 +41,21 @@ enum ContactMedium {
 union ContactIndividual = Customer | User
 
 type Contact {
-  id: string!
+  id: String!
   medium: ContactMedium
   from: ContactIndividual
   to: ContactIndividual
   date: DateTime!
-  subject: string!
-  contents: string!
+  subject: String!
+  contents: String!
   survey: SurveyTemplate
 }
 
 type SurveyTemplate {
-  id: string!
+  id: String!
   questions: SurveyQuestion[]!
   author: User!
-  name: string!
+  name: String!
 }
 
 union CommentSubject = Comment | SurveyTemplate | Customer
@@ -63,19 +63,18 @@ union CommentSubject = Comment | SurveyTemplate | Customer
 type Comment {
   author: User!
   subject: CommentSubject!
-  message: string!
+  message: String!
   date: DateTime!
 }
 
 type Query {
-  getCustomers(page: int = 0, firstName: string, lastName: string): Customer[]
-  getContacts(page: int = 0, customerId: string, surveyTemplateId: string, username: string): Contact[]
+  getCustomers(page: Int = 0, firstName: String, lastName: String): Customer[]
+  getContacts(page: Int = 0, customerId: String, surveyTemplateId: String, username: String): Contact[]
 }
 
 type Mutation {
-  addPerson(person: Person!): string
-  addUser(user: User!): string
-  setPassword(username: string!, password: string!): string
-  login(username: string!, password: string!): boolean
-  
+  addPerson(person: Person!): Boolean
+  addUser(user: User!): Boolean
+  setPassword(username: String!, password: String!): Boolean
+  login(username: string!, password: string!): Boolean
 }
