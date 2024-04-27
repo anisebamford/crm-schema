@@ -79,4 +79,5 @@ type Mutation {
   addUser(user: User!): Boolean
   setPassword(username: String!, password: String!): Boolean
   login(username: string!, password: string!): Boolean
+  updatePerson(person: Person!): Boolean
 }
