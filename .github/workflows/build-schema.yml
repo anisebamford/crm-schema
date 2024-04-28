@@ -20,6 +20,6 @@ jobs:
             - name: Update schema
               uses: test-room-7/action-update-file@v1
               with:
-                  file-path: schema.graphql
+                  file-path: /schema.graphql
                   commit-msg: Build schema
                   github-token: ${{ secrets.GITHUB_TOKEN }}
