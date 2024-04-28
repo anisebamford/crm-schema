@@ -1,0 +1,10 @@
+type SurveyQuestionString {
+  id: String!
+  question: String!
+  pattern: String
+}
+
+type SurveyAnswerString {
+  question: SurveyQuestionString!
+  answer: String!
+}

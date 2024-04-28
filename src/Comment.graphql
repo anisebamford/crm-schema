@@ -1,0 +1,8 @@
+union CommentSubject = Comment | SurveyTemplate | Customer
+
+type Comment {
+  author: User!
+  subject: CommentSubject!
+  message: String!
+  date: DateTime!
+}

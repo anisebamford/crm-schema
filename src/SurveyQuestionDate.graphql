@@ -1,0 +1,11 @@
+type SurveyQuestionDate {
+  id: String!
+  question: DateTime!
+  rangeMax: DateTime
+  rangeMin: DateTime
+}
+
+type SurveyAnswerDate {
+  question: SurveyQuestionDate!
+  answer: DateTime!
+}

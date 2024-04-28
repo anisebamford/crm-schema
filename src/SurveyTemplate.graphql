@@ -1,0 +1,16 @@
+type SurveyTemplate {
+  id: String!
+  questions: [SurveyQuestion]!
+  author: User!
+  name: String!
+}
+
+type Query {
+  getSurveyTemplates(name: String, id: String): [SurveyTemplate]!
+}
+
+type Mutation {
+  createSurveyTemplate(surveyTemplate: SurveyTemplate!): Boolean
+  updateSurveyTemplate(surveyTemplate: SurveyTemplate!): Boolean
+  removeSurveyQuestionFromTemplate(surveyTemplateId: String!, surveyQuestionId: String!): Boolean
+}

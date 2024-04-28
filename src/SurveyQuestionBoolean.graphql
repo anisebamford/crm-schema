@@ -1,0 +1,11 @@
+type SurveyQuestionBoolean {
+  id: String!
+  question: String!
+  trueDisplayValue: String
+  falseDisplayValue: String
+}
+
+type SurveyAnswerBoolean {
+  question: SurveyQuestionBoolean!
+  answer: Boolean!
+}

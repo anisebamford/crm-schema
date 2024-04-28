@@ -1,0 +1,13 @@
+type Address {
+  streetAddress: String!
+  city: String!
+  state: String!
+  postalCode: String!
+  country: String!
+}
+
+type ContactInfo {
+  phone: String
+  email: String
+  mailingAddress: Address
+}

@@ -1,0 +1,21 @@
+union SurveyQuestion = 
+  SurveyQuestionBoolean |
+  SurveyQuestionDate |
+  SurveyQuestionFloat |
+  SurveyQuestionInt |
+  SurveyQuestionOptions |
+  SurveyQuestionString
+
+union SurveyAnswer = 
+  SurveyAnswerBoolean |
+  SurveyAnswerDate |
+  SurveyAnswerFloat |
+  SurveyAnswerInt |
+  SurveyAnswerOptions |
+  SurveyAnswerString
+
+type Mutation {
+  createSurveyQuestion(surveyQuestion: SurveyQuestion!): Boolean
+  updateSurveyQuestion(surveyQuestion: SurveyQuestion!): Boolean
+  deleteSurveyQuestion(surveyQuestion: SurveyQuestion!): Boolean
+}

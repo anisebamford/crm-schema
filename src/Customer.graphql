@@ -1,0 +1,8 @@
+type Customer {
+  id: String!
+  person: Person!
+}
+
+type Query {
+  getCustomers(page: Int = 0): [Customer]
+}

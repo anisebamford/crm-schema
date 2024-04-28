@@ -1,0 +1,18 @@
+enum UserStatus {
+  ACTIVE
+  INACTIVE
+}
+
+type User {
+  username: String!
+  person: Person!
+  role: String!
+  status: UserStatus!
+}
+
+type Mutation {
+  createUser(user: User!): Boolean
+  setPassword(username: String!, password: String!): Boolean
+  login(username: String!, password: String!): Boolean
+  updateUser(user: User!): Boolean
+}

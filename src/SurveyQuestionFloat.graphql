@@ -1,0 +1,11 @@
+type SurveyQuestionFloat {
+  id: String!
+  question: String!
+  rangeMax: Float
+  rangeMin: Float
+}
+
+type SurveyAnswerFloat {
+  question: SurveyQuestionFloat!
+  answer: Float!
+}

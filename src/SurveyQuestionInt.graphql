@@ -1,0 +1,11 @@
+type SurveyQuestionInt {
+  id: String!
+  question: String!
+  rangeMin: Int
+  rangeMax: Int
+}
+
+type SurveyAnswerInt {
+  question: SurveyQuestionInt!
+  answer: Int!
+}

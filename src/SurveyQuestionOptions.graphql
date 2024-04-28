@@ -1,0 +1,10 @@
+type SurveyQuestionOptions {
+  id: String!
+  question: String!
+  options: [String]!
+}
+
+type SurveyAnswerOptions {
+  question: SurveyQuestionOptions!
+  answer: String!
+}

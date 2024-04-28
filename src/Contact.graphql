@@ -1,0 +1,23 @@
+enum ContactMedium {
+  EMAIL
+  PHONE
+  CONVERSATION
+  LETTER
+}
+
+union ContactIndividual = Customer | User
+
+type Contact {
+  id: String!
+  medium: ContactMedium
+  from: ContactIndividual
+  to: ContactIndividual
+  date: DateTime!
+  subject: String!
+  contents: String!
+  survey: SurveyResponse
+}
+
+type Query {
+    getContacts(page: Int = 0): [Contact]
+}

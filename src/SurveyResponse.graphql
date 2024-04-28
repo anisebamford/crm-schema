@@ -1,0 +1,6 @@
+type SurveyResponse {
+  date: DateTime!
+  respondent: Customer!
+  survey: SurveyTemplate!
+  responses: [SurveyAnswer]!
+}
