@@ -4,6 +4,8 @@ jobs:
     build:
         name: Build schema
         runs-on: ubuntu-latest
+        permissions:
+            id-token: write
         steps:
             - uses: actions/checkout@v1
 
@@ -18,8 +20,6 @@ jobs:
               run: npm run build
 
             - name: Update schema
-              permissions:
-                  id-token: write
               uses: test-room-7/action-update-file@v1
               with:
                   file-path: ./schema.graphql
