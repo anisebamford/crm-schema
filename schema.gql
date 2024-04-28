@@ -56,7 +56,62 @@ type Contact {
   date: DateTime!
   subject: String!
   contents: String!
-  survey: SurveyTemplate
+  survey: SurveyResponse
+}
+
+type SurveyQuestionString {
+  question: String!
+}
+
+type SurveyQuestionInt {
+  question: String!
+}
+
+type SurveyQuestionFloat {
+  question: String!
+}
+
+type SurveyQuestionDate {
+  question: Date!
+}
+
+type SurveyQuestionBoolean {
+  question: String!
+  trueValue: String
+  falseValue: String
+}
+
+type SurveyQuestionOptions {
+  question: String!
+  options: String[]!
+}
+
+type SurveyQuestionRange {
+  question: String!
+  min: Float!
+  max: Float
+}
+
+union SurveyQuestion = SurveyQuestionString | SurveyQuestionInt | SurveyQuestionFloat | SurveyQuestionDate | SurveyQuestionBoolean | SurveyQuestionOptions | SurveyQuestionRange
+
+type SurveyAnswerString {
+  question: SurveyQuestionString!
+  answer: String!
+}
+
+type SurveyAnswerInt {
+  question: SurveyQuestionInt!
+  answer: Int!
+}
+
+type SurveyAnswerFloat {
+  question: SurveyQuestionFloat!
+  answer: Float!
+}
+
+type SurveyAnswerDate {
+  question: SurveyQuestionDate!
+  answer: DateTime!
 }
 
 type SurveyTemplate {
@@ -86,4 +141,5 @@ type Mutation {
   setPassword(username: String!, password: String!): Boolean
   login(username: string!, password: string!): Boolean
   updatePerson(person: Person!): Boolean
+  
 }
