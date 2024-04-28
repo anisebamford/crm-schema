@@ -9,6 +9,9 @@ jobs:
 
             - uses: actions/setup-node@v1
 
+            - name: Install
+              run: npm i
+
             - name: Run build script
               run: npm run build
 
