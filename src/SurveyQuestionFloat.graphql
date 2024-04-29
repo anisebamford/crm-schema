@@ -1,6 +1,7 @@
 type SurveyQuestionFloat {
   id: String!
   question: String!
+  required: Boolean
   rangeMax: Float
   rangeMin: Float
 }

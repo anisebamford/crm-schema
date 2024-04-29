@@ -1,6 +1,7 @@
 type SurveyQuestionOptions {
   id: String!
   question: String!
+  required: Boolean
   options: [String]!
 }
 

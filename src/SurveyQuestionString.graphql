@@ -1,6 +1,7 @@
 type SurveyQuestionString {
   id: String!
   question: String!
+  required: Boolean
   pattern: String
 }
 

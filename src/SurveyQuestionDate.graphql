@@ -1,6 +1,7 @@
 type SurveyQuestionDate {
   id: String!
   question: DateTime!
+  required: Boolean
   rangeMax: DateTime
   rangeMin: DateTime
 }

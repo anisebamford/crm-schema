@@ -1,6 +1,7 @@
 type SurveyQuestionInt {
   id: String!
   question: String!
+  required: Boolean
   rangeMin: Int
   rangeMax: Int
 }
