@@ -102,6 +102,7 @@ type SurveyAnswerBoolean {
 type SurveyQuestionDate {
   id: String!
   question: DateTime!
+  required: Boolean
   rangeMax: DateTime
   rangeMin: DateTime
 }
@@ -114,6 +115,7 @@ type SurveyAnswerDate {
 type SurveyQuestionFloat {
   id: String!
   question: String!
+  required: Boolean
   rangeMax: Float
   rangeMin: Float
 }
@@ -126,6 +128,7 @@ type SurveyAnswerFloat {
 type SurveyQuestionInt {
   id: String!
   question: String!
+  required: Boolean
   rangeMin: Int
   rangeMax: Int
 }
@@ -138,6 +141,7 @@ type SurveyAnswerInt {
 type SurveyQuestionOptions {
   id: String!
   question: String!
+  required: Boolean
   options: [String]!
 }
 
@@ -149,6 +153,7 @@ type SurveyAnswerOptions {
 type SurveyQuestionString {
   id: String!
   question: String!
+  required: Boolean
   pattern: String
 }
 
