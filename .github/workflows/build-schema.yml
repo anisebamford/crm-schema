@@ -1,26 +1,29 @@
 name: Build Schema
-on: push
+on:
+  push:
+    branches:
+      - 'main'
 jobs:
-    build:
-        name: Build schema
-        runs-on: ubuntu-latest
-        permissions: write-all
-        steps:
-            - uses: actions/checkout@v1
+  build:
+    name: Build schema
+    runs-on: ubuntu-latest
+    permissions: write-all
+    steps:
+      - uses: actions/checkout@v1
 
-            - uses: actions/setup-node@v1
-              with:
-                  node-version: 18
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18
 
-            - name: Install
-              run: npm i
+      - name: Install
+        run: npm i
 
-            - name: Run build script
-              run: npm run build
+      - name: Run build script
+        run: npm run build
 
-            - name: Update schema
-              uses: test-room-7/action-update-file@v1
-              with:
-                  file-path: schema.graphql
-                  commit-msg: Build schema
-                  github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Update schema
+        uses: test-room-7/action-update-file@v1
+        with:
+          file-path: schema.graphql
+          commit-msg: Build schema
+          github-token: ${{ secrets.GITHUB_TOKEN }}
