@@ -89,6 +89,7 @@ union SurveyAnswer = SurveyAnswerBoolean | SurveyAnswerDate | SurveyAnswerFloat 
 type SurveyQuestionBoolean {
   id: String!
   question: String!
+  required: Boolean
   trueDisplayValue: String
   falseDisplayValue: String
 }
