@@ -4,6 +4,7 @@ type SurveyQuestionInt {
   required: Boolean
   rangeMin: Int
   rangeMax: Int
+  default: Int
 }
 
 type SurveyAnswerInt {
