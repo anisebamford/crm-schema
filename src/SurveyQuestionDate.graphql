@@ -1,9 +1,20 @@
+enum DateTimeGranularity = {
+  YEAR
+  MONTH
+  DAY
+  HOUR
+  MINUTE
+  SECOND
+}
+
 type SurveyQuestionDate {
   id: String!
   question: DateTime!
   required: Boolean
   rangeMax: DateTime
   rangeMin: DateTime
+  default: DateTime
+  granularity: DateTimeGranularity
 }
 
 type SurveyAnswerDate {
