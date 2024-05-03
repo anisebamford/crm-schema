@@ -4,6 +4,7 @@ type SurveyQuestionBoolean {
   required: Boolean
   trueDisplayValue: String
   falseDisplayValue: String
+  default: Boolean
 }
 
 type SurveyAnswerBoolean {
