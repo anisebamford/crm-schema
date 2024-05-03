@@ -143,6 +143,7 @@ type SurveyQuestionOptions {
   question: String!
   required: Boolean
   options: [String]!
+  default: String
 }
 
 type SurveyAnswerOptions {
