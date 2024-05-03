@@ -3,6 +3,7 @@ type SurveyQuestionString {
   question: String!
   required: Boolean
   pattern: String
+  default: String
 }
 
 type SurveyAnswerString {
