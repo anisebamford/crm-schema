@@ -118,6 +118,7 @@ type SurveyQuestionFloat {
   required: Boolean
   rangeMax: Float
   rangeMin: Float
+  default: Float
 }
 
 type SurveyAnswerFloat {
