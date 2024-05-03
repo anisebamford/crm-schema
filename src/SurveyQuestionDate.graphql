@@ -1,4 +1,4 @@
-enum DateTimeGranularity = {
+enum DateTimeGranularity {
   YEAR
   MONTH
   DAY
