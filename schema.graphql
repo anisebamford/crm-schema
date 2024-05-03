@@ -92,11 +92,21 @@ type SurveyQuestionBoolean {
   required: Boolean
   trueDisplayValue: String
   falseDisplayValue: String
+  default: Boolean
 }
 
 type SurveyAnswerBoolean {
   question: SurveyQuestionBoolean!
   answer: Boolean!
+}
+
+enum DateTimeGranularity {
+  YEAR
+  MONTH
+  DAY
+  HOUR
+  MINUTE
+  SECOND
 }
 
 type SurveyQuestionDate {
@@ -105,6 +115,8 @@ type SurveyQuestionDate {
   required: Boolean
   rangeMax: DateTime
   rangeMin: DateTime
+  default: DateTime
+  granularity: DateTimeGranularity
 }
 
 type SurveyAnswerDate {
