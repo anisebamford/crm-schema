@@ -1,6 +1,8 @@
 type Person {
   givenName: String!
   surName: String!
+  pronouns: String
+  title: String
   preferredName: String
   birthday: DateTime
   contactInfo: ContactInfo!
