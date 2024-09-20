@@ -1,7 +1,20 @@
+enum RoomStatus {
+  CLEAN
+  DIRTY
+  OCCUPIED
+  OUT_OF_ORDER
+}
+
+type RoomType {
+  name: String!
+  description: String!
+}
+
 type Room {
-  name: String
-  status: RoomStatus
-  type: RoomType
+  name: String!
+  status: RoomStatus!
+  type: RoomType!
   description: String
   location: String
+  sortOrder: Number
 }
