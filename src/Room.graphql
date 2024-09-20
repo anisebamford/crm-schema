@@ -1,0 +1,7 @@
+type Room {
+  name: String
+  status: RoomStatus
+  type: RoomType
+  description: String
+  location: String
+}
