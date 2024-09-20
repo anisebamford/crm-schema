@@ -6,15 +6,33 @@ enum RoomStatus {
 }
 
 type RoomType {
+  id: String!
   name: String!
-  description: String!
+  description: String
 }
 
 type Room {
+  id: String!
   name: String!
   status: RoomStatus!
   type: RoomType!
   description: String
   location: String
   sortOrder: Number
+}
+
+type Mutation {
+  ## Admin only
+  CreateRoomType(roomType: RoomType): Boolean
+  UpdateRoomType(roomType: RoomType): Boolean
+  DeleteRoomType(roomType: RoomType): Boolean
+  CreateRoom(room: Room): Boolean
+  UpdateRoom(room: Room): Boolean
+  DeleteRoom(room: Room): Boolean
+}
+
+type Query {
+  getRooms: (status: RoomStatus, type: RoomType): [Room]
+  getRoomByName: (name: String): Room
+  getRoomById: (id: String): Room
 }
